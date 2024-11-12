@@ -1,26 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Portafolio{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Portafolio</h1>
+        <h1>My Portfolio</h1>
         <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
-                <li><a href="{{ url_for('log_in') }}">Log In</a></li>
-            </ul>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('login') }}">Login</a>
         </nav>
     </header>
-
-    <main>
-        {% block body %}
-        {% endblock %}
-    </main>
+    {% block content %}{% endblock %}
 </body>
 </html>

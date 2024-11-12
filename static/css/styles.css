@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    width: 90vw;
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    justify-content: center;
+}
+
+.intro h1, .intro h2, .intro p {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+}
+
+.intro h1 {
+    font-size: 4em;
+    margin-bottom: -20px;
+    color: #e94560;
+}
+
+.intro h2 {
+    font-size: 3.5em;
+    margin-bottom: 5px;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #888888;
+}
+
+.github-icon {
+    font-size: 2.5em;
+    color: #e94560;
+    transition: color 0.3s, transform 0.3s;
+    margin-bottom: 10px;
+}
+
+.github-icon a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.github-icon:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.skills {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.skills-box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+}
+
+.skill-category {
+    width: 30%;
+}
+
+.skill-category h4 {
+    font-size: 1.5em;
+    color: #e94560;
+    margin-bottom: 15px;
+}
+
+.skill-category ul {
+    list-style-type: none;
+    padding: 0;
+    color: #888888;
+}
+
+.skill-category li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.skill-category i {
+    margin-right: 10px;
+    color: #e94560;
+}
+    
+
+.work-item {
+    margin-bottom: 20px;
+}
+
+.work-item h4 {
+    font-size: 1.5em;
+    color: #e94560;
+}
+
+.work-item p {
+    font-size: 1.1em;
+    color: #888888;
+}
