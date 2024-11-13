@@ -113,16 +113,47 @@ body {
 }
     
 
-.work-item {
+/* Sección de Trabajos */
+.work {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.work h3 {
+    font-size: 2em;
+    color: #e94560;
     margin-bottom: 20px;
 }
 
+.work-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.work-item {
+    width: calc(50% - 10px); /* Toma la mitad del ancho del contenedor */
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.work-item img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
 .work-item h4 {
-    font-size: 1.5em;
     color: #e94560;
+    margin-bottom: 10px;
 }
 
 .work-item p {
-    font-size: 1.1em;
+    font-size: 0.9em;
     color: #888888;
 }
+

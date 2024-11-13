@@ -1,68 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
-    <div class="content-wrapper">
-        <section class="intro">
-            <h1>Hi,</h1>
-            <h2>I'm <span class="highlight">Masante,</span></h2>
-            <h2 class="title">Web Developer</h2>
-            <p>Full Stack Dev / Canva Expert</p>
-        </section>
+{% extends "base.html" %} {% block content %}
 
-        <div class="github-icon">
-            <a href="https://github.com/sem1312" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
+<!-- intro-->
+<div class="content-wrapper">
+  <section class="intro">
+    <h1>Hi,</h1>
+    <h2>I'm <span class="highlight">Masante,</span></h2>
+    <h2 class="title">Web Developer</h2>
+    <p>Full Stack Dev / Canva Expert</p>
+  </section>
 
-        <section id="skills" class="skills">
-            <h3>My Skills</h3>
-            <div class="skills-box">
-                <div class="skill-category">
-                    <h4>Front-End</h4>
-                    <ul>
-                        <li><i class="fab fa-js-square"></i> JavaScript</li>
-                        <li><i class="fab fa-react"></i> React</li>
-                        <li><i class="fab fa-css3-alt"></i> CSS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Back-End</h4>
-                    <ul>
-                        <li><i class="fab fa-python"></i> Python</li>
-                        <li><i class="fas fa-cogs"></i> Flask</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Technologies</h4>
-                    <ul>
-                        <li><i class="fab fa-git"></i> Git</li>
-                        <li><i class="fab fa-github"></i> GitHub</li>
-                        <li><i class="fas fa-code"></i> Visual Studio Code</li>
-                        <li><i class="fas fa-paint-brush"></i> P5.js</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+  <div class="github-icon">
+    <a href="https://github.com/sem1312" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
 
-        <section id="work" class="work">
-            <h3>Previous Work</h3>
-            <div class="work-item">
-                <h4>Project 1</h4>
-                <p>A short description of project 1.</p>
-            </div>
-            <div class="work-item">
-                <h4>Project 2</h4>
-                <p>A short description of project 2.</p>
-            </div>
-        </section>
+  <!-- las skills -->
+  <section id="skills" class="skills">
+    <h3>My Skills</h3>
+    <div class="skills-box">
+      <div class="skill-category">
+        <h4>Front-End</h4>
+        <ul>
+          <li><i class="fab fa-js-square"></i> JavaScript</li>
+          <li><i class="fab fa-react"></i> React</li>
+          <li><i class="fab fa-css3-alt"></i> CSS</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h4>Back-End</h4>
+        <ul>
+          <li><i class="fab fa-python"></i> Python</li>
+          <li><i class="fas fa-cogs"></i> Flask</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h4>Technologies</h4>
+        <ul>
+          <li><i class="fab fa-git"></i> Git</li>
+          <li><i class="fab fa-github"></i> GitHub</li>
+          <li><i class="fas fa-code"></i> Visual Studio Code</li>
+          <li><i class="fas fa-paint-brush"></i> P5.js</li>
+        </ul>
+      </div>
     </div>
-</body>
-</html>
+  </section>
+
+  <!-- proyectos-->
+  <section id="work" class="work">
+    <h3>Previous Work</h3>
+    <div class="work-items">
+        <div class="work-item">
+            <h4>API Clash of Clans</h4>
+            <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Project 1 Image"/>
+            <p>Este es un proyecto escolar desarrollado en React que te permite insertar tu ID de Clash of Clans (CoC) y muestra tus estadísticas de juego. Además, incorpora la calculadora de habilidades de "couly_gallo01".</p>
+        </div>
+        <div class="work-item">
+            <h4>Copa Renault</h4>
+            <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Project 2 Image"/>
+            <p>Prototipo de la pagina para la Copa Renault</p>
+        </div>
+        <div class="work-item">
+            <h4>Fuchi Tiki-Taka</h4>
+            <img src="{{ url_for('static', filename='images/project3.jpg') }}" alt="Project 3 Image"/>
+            <p>Fuchi-Tiki-Taka es un juego de tres en línea con temática de fútbol, donde los jugadores eligen clubes y compiten por formar una línea ganadora en la grilla</p>
+        </div>
+        <div class="work-item">
+            <h4>Juego de memoria</h4>
+            <img src="{{ url_for('static', filename='images/project4.jpg') }}" alt="Project 4 Image"/>
+            <p>Es un juego clásico de cartas donde pones a prueba tu memoria al emparejar tarjetas iguales.</p>
+        </div>
+    </div>
+</section>
+
+</div>
+{% endblock %}
