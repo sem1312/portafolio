@@ -1,14 +1,13 @@
-# app.py
 from flask import Flask, render_template, redirect, url_for, request, flash, send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
-from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
+from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SECRET_KEY'] = 'key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://ugk2nsgl77xe7w0j:qPSKJQALkY2eQP4gWzhf@bikibggurwnmevjbgtwu-mysql.services.clever-cloud.com:3306/bikibggurwnmevjbgtwu'
 
 db = SQLAlchemy()
@@ -33,6 +32,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 @app.route('/')
+@login_required  # Solo usuarios autenticados pueden acceder
 def index():
     return render_template('index.html')
 
@@ -48,6 +48,13 @@ def login():
         else:
             flash('Invalid credentials')
     return render_template('login.html')
+
+@app.route('/logout')
+@login_required  # Solo usuarios autenticados pueden cerrar sesión
+def logout():
+    logout_user()
+    flash('You have been logged out.')
+    return redirect(url_for('login'))
 
 @app.route('/sign_in', methods=['GET', 'POST'])
 def sign_in():
@@ -65,6 +72,7 @@ def sign_in():
     return render_template('sign_in.html')
 
 @app.route('/view_cv')
+@login_required  # Solo usuarios autenticados pueden acceder
 def view_cv():
     return send_file('static/pdf/CV.pdf', as_attachment=True)
 

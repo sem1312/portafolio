@@ -59,6 +59,10 @@ body {
     color: #e94560;
     transition: color 0.3s, transform 0.3s;
     margin-bottom: 10px;
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
+    z-index: 10; 
 }
 
 .github-icon a {
@@ -112,8 +116,6 @@ body {
     color: #e94560;
 }
     
-
-/* Sección de Trabajos */
 .work {
     margin-top: 40px;
     text-align: center;
@@ -133,7 +135,7 @@ body {
 }
 
 .work-item {
-    width: calc(50% - 10px); /* Toma la mitad del ancho del contenedor */
+    width: calc(50% - 10px);
     background-color: #1c1c1c;
     padding: 20px;
     border-radius: 10px;
@@ -157,3 +159,75 @@ body {
     color: #888888;
 }
 
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 3px solid #e94560;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1c1c1c; /* Fondo oscuro */
+    padding: 10px 20px;
+    border-bottom: 2px solid #e94560; /* Línea destacada */
+}
+
+.navbar a {
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    transition: color 0.3s, background-color 0.3s;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    color: #e94560; /* Destacado al pasar el cursor */
+    background-color: #2e2e2e; /* Fondo ligeramente más claro */
+    border-radius: 5px; /* Bordes suaves */
+}
+
+.navbar .nav-link.active {
+    color: #e94560; /* Color activo */
+    font-weight: bold; /* Resaltar */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center; /* Centrar los enlaces */
+    align-items: center;
+    gap: 15px; /* Espaciado entre enlaces */
+}
+
+.navbar-toggler {
+    background-color: #e94560; /* Color del botón de colapso */
+    border: none;
+    padding: 5px 10px;
+    color: #ffffff;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 5px #e94560; /* Efecto al hacer foco */
+}
+
+/* Responsivo para dispositivos pequeños */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column; /* Alinear enlaces verticalmente */
+        gap: 10px;
+        background-color: #1c1c1c; /* Fondo igual que el navbar */
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .navbar-nav a {
+        width: 100%; /* Ocupa todo el ancho */
+        text-align: center;
+    }
+}
