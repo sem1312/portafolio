@@ -59,16 +59,15 @@ body {
     color: #e94560;
     transition: color 0.3s, transform 0.3s;
     margin-bottom: 10px;
-    position: fixed; 
-    bottom: 20px; 
+    position: fixed;
+    bottom: 20px;
     right: 20px;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .github-icon a {
     text-decoration: none;
     color: inherit;
-
 }
 
 .github-icon:hover {
@@ -115,7 +114,7 @@ body {
     margin-right: 10px;
     color: #e94560;
 }
-    
+
 .work {
     margin-top: 40px;
     text-align: center;
@@ -144,9 +143,12 @@ body {
 }
 
 .work-item img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
     height: auto;
     margin: 15px 0;
+    border-radius: 10px;
+    border: 2px solid #e94560;
 }
 
 .work-item h4 {
@@ -168,15 +170,14 @@ body {
     border: 3px solid #e94560;
 }
 
-/* Navbar */
 .navbar {
-    background-color: #1c1c1c; /* Fondo oscuro */
+    background-color: #1c1c1c;
     padding: 10px 20px;
-    border-bottom: 2px solid #e94560; /* Línea destacada */
+    border-bottom: 2px solid #e94560;
 }
 
 .navbar a {
-    color: #ffffff; /* Texto blanco */
+    color: #ffffff;
     text-decoration: none;
     padding: 10px 15px;
     font-size: 1.2em;
@@ -185,25 +186,25 @@ body {
 }
 
 .navbar a:hover {
-    color: #e94560; /* Destacado al pasar el cursor */
-    background-color: #2e2e2e; /* Fondo ligeramente más claro */
-    border-radius: 5px; /* Bordes suaves */
+    color: #e94560;
+    background-color: #2e2e2e;
+    border-radius: 5px;
 }
 
 .navbar .nav-link.active {
-    color: #e94560; /* Color activo */
-    font-weight: bold; /* Resaltar */
+    color: #e94560;
+    font-weight: bold;
 }
 
 .navbar-nav {
     display: flex;
-    justify-content: center; /* Centrar los enlaces */
+    justify-content: center;
     align-items: center;
-    gap: 15px; /* Espaciado entre enlaces */
+    gap: 15px;
 }
 
 .navbar-toggler {
-    background-color: #e94560; /* Color del botón de colapso */
+    background-color: #e94560;
     border: none;
     padding: 5px 10px;
     color: #ffffff;
@@ -213,21 +214,20 @@ body {
 
 .navbar-toggler:focus {
     outline: none;
-    box-shadow: 0 0 5px #e94560; /* Efecto al hacer foco */
+    box-shadow: 0 0 5px #e94560;
 }
 
-/* Responsivo para dispositivos pequeños */
 @media (max-width: 768px) {
     .navbar-nav {
-        flex-direction: column; /* Alinear enlaces verticalmente */
+        flex-direction: column;
         gap: 10px;
-        background-color: #1c1c1c; /* Fondo igual que el navbar */
+        background-color: #1c1c1c;
         border-radius: 5px;
         padding: 10px;
     }
 
     .navbar-nav a {
-        width: 100%; /* Ocupa todo el ancho */
+        width: 100%;
         text-align: center;
     }
 }

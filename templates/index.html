@@ -3,11 +3,12 @@
 <!-- intro-->
 <div class="content-wrapper">
   <section class="intro">
-    <img src="{{ url_for('static', filename='img/pfp.jpg') }}" alt="Profile Picture" class="profile-picture"/>
-    <h1>Hi,</h1>    
-    <h2>I'm <span class="highlight">Masante,</span></h2>
-    <h2 class="title">Web Developer</h2>
-    <p>Full Stack Dev / Canva Expert</p>
+    <img src="{{ url_for('static', filename='img/pf.jpg') }}" alt="Profile Picture" class="profile-picture"/>
+    <h1 contenteditable="true" id="name">Hi,</h1>    
+    <h2 contenteditable="true" id="title">I'm <span class="highlight">Masante,</span></h2>
+    <h2 contenteditable="true" id="role" class="title">Web Developer</h2>
+    <p contenteditable="true" id="description">Full Stack Dev / Canva Expert</p>
+    <button id="save-btn">Save Changes</button>
   </section>
 
   <div class="github-icon">
@@ -53,7 +54,7 @@
     <div class="work-items">
         <div class="work-item">
             <h4>API Clash of Clans</h4>
-            <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Project 1 Image"/>
+            <img src="{{ url_for('static', filename='img/apicoc.jpg') }}" alt="Project 1 Image"/>
             <p>Este es un proyecto escolar desarrollado en React que te permite insertar tu ID de Clash of Clans (CoC) y muestra tus estadísticas de juego. Además, incorpora la calculadora de habilidades de "couly_gallo01".</p>
         </div>
         <div class="work-item">
