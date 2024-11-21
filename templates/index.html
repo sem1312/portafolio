@@ -1,14 +1,19 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block content %}
 
 <!-- intro-->
 <div class="content-wrapper">
   <section class="intro">
-    <img src="{{ url_for('static', filename='img/pf.jpg') }}" alt="Profile Picture" class="profile-picture"/>
+    <img src="{{ url_for('static', filename='img/pfp.jpeg') }}" alt="Profile Picture" class="profile-picture"/>
     <h1 contenteditable="true" id="name">Hi,</h1>    
     <h2 contenteditable="true" id="title">I'm <span class="highlight">Masante,</span></h2>
     <h2 contenteditable="true" id="role" class="title">Web Developer</h2>
     <p contenteditable="true" id="description">Full Stack Dev / Canva Expert</p>
-    <button id="save-btn">Save Changes</button>
+    
+    <div class="email-container">
+      <i class="fab fa-google"></i>
+      <span class="email-text" contenteditable="true">juanqmasante2@gmail.com</span>
+    </div>
   </section>
 
   <div class="github-icon">
@@ -17,7 +22,7 @@
     </a>
   </div>
 
-  <!-- las skills -->
+  <!-- Las skills -->
   <section id="skills" class="skills">
     <h3>My Skills</h3>
     <div class="skills-box">
@@ -48,7 +53,7 @@
     </div>
   </section>
 
-  <!-- proyectos-->
+  <!-- Proyectos -->
   <section id="work" class="work">
     <h3>Previous Work</h3>
     <div class="work-items">
@@ -56,24 +61,43 @@
             <h4>API Clash of Clans</h4>
             <img src="{{ url_for('static', filename='img/apicoc.jpg') }}" alt="Project 1 Image"/>
             <p>Este es un proyecto escolar desarrollado en React que te permite insertar tu ID de Clash of Clans (CoC) y muestra tus estadísticas de juego. Además, incorpora la calculadora de habilidades de "couly_gallo01".</p>
+            <div class="project-github-icon">
+              <a href="https://github.com/Fabrikpz/proyecto-api-coc" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
         </div>
         <div class="work-item">
             <h4>Copa Renault</h4>
             <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Project 2 Image"/>
-            <p>Prototipo de la pagina para la Copa Renault</p>
+            <p>Prototipo de la página para la Copa Renault</p>
+            <div class="project-github-icon">
+              <a href="https://github.com/sem1312/copa-renault" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
         </div>
         <div class="work-item">
             <h4>Fuchi Tiki-Taka</h4>
-            <img src="{{ url_for('static', filename='images/project3.jpg') }}" alt="Project 3 Image"/>
-            <p>Fuchi-Tiki-Taka es un juego de tres en línea con temática de fútbol, donde los jugadores eligen clubes y compiten por formar una línea ganadora en la grilla</p>
+            <img src="{{ url_for('static', filename='img/fuchi.jpg') }}" alt="Project 3 Image"/>
+            <p>Fuchi-Tiki-Taka es un juego de tres en línea con temática de fútbol, donde los jugadores eligen clubes y compiten por formar una línea ganadora en la grilla.</p>
+            <div class="project-github-icon">
+              <a href="https://github.com/Fabrikpz/Fuchi-tiki-taka" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
         </div>
         <div class="work-item">
             <h4>Juego de memoria</h4>
-            <img src="{{ url_for('static', filename='images/project4.jpg') }}" alt="Project 4 Image"/>
+            <img src="{{ url_for('static', filename='img/memoria.jpg') }}" alt="Project 4 Image"/>
             <p>Es un juego clásico de cartas donde pones a prueba tu memoria al emparejar tarjetas iguales.</p>
+            <div class="project-github-icon">
+              <a href="https://github.com/Fabrikpz/Juego-de-memoria" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
         </div>
     </div>
 </section>
-
 </div>
 {% endblock %}

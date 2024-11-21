@@ -231,3 +231,49 @@ body {
         text-align: center;
     }
 }
+
+.project-github-icon {
+    font-size: 2.5em;  
+    color: #e94560;   
+    transition: color 0.3s, transform 0.3s;  /* Mismo efecto de transición */
+    margin-top: 10px;   /* Espacio por encima del ícono */
+    margin-left: auto;  /* Centrar en el contenedor */
+    margin-right: auto; /* Centrar en el contenedor */
+    display: block;     /* Asegura que el ícono sea un bloque para centrarlo */
+}
+
+.project-github-icon a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-github-icon:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Estilo para el contenedor de Gmail */
+.email-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Más pequeño para acercar el texto a la descripción */
+    font-size: 1.5em; /* Aumenta el tamaño del texto */
+}
+
+.email-container i {
+    font-size: 2em;  /* Aumenta el tamaño del icono */
+    color: #e94560;  /* Rojo/rosa como el de otros iconos */
+    margin-right: 10px;  /* Espacio entre el icono y el texto */
+}
+
+.email-text {
+    color: #e94560;  /* Color rojo/rosa para el texto */
+    font-weight: bold;
+}
+
+/* Estilo para la sección de intro */
+.intro {
+    text-align: center;
+    padding: 20px;
+}
