@@ -1,3 +1,4 @@
+#autenticar usuarios usando flask-login y wtforms
 from flask import Flask, render_template, redirect, url_for, request, flash, send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -11,6 +12,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://ugk2nsgl77xe7w0j:qPSKJQALkY2eQP4gWzhf@bikibggurwnmevjbgtwu-mysql.services.clever-cloud.com:3306/bikibggurwnmevjbgtwu'
 
+#inicializacion de la base de datos en mysql
 db = SQLAlchemy()
 db.init_app(app)
 migrate = Migrate(app, db)
@@ -18,6 +20,7 @@ migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
+# modelo de usuario
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
@@ -25,7 +28,7 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return f'<User {self.username}>'
-
+#creacion de la base de datos en clever cloud
 with app.app_context():
     db.create_all()
 
@@ -33,11 +36,14 @@ with app.app_context():
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+# ruta principal protegida por login
 @app.route('/')
 @login_required  # Solo usuarios autenticados pueden acceder
 def index():
     return render_template('index.html')
 
+
+# implementacion del login utilizando flask-wtf
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -73,6 +79,7 @@ def sign_in():
             return redirect(url_for('login'))
     return render_template('sign_in.html')
 
+# ruta para la descarga del cv como pdf
 @app.route('/view_cv')
 @login_required  # Solo usuarios autenticados pueden acceder
 def view_cv():
